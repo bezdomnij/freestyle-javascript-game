@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Javascript Game</title>
+    <meta charset="UTF-8">
+    <!-- http://proger.i-forge.net/The_smallest_transparent_pixel/ -->
+    <link rel="icon" href="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=">
+    <link rel="stylesheet" href="/static/css/grafic.css">
+    <script src="/static/javascript/game.js" defer></script>
+</head>
+<body>
+<div class="game-field" style="width: {{ 40*cols }}px; height: {{ 40*rows }}px">
+    {% for row_index in range(rows) %}
+        <div class="row">
+            {% for col_index in range(cols) %}
+                <div
+                        class="field"
+                        data-row="{{ row_index }}"
+                        data-col="{{ col_index }}"
+                ></div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+    <div class="snake_place"></div>
+</div>
+</body>
+</html>

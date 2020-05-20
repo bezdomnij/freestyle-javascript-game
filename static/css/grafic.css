@@ -1,0 +1,38 @@
+
+
+
+.field {
+    height: 40px;
+    width: 40px;
+    background: url('/static/background.png');
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div.snake_place{
+    height: 40px;
+    width: 40px;
+    color: black;
+    background: url('/static/snake.png');
+    border: black solid 1px;
+    position: absolute;
+    top: 500px;
+}
+
+.game-field {
+    margin-top: 10px;
+    /*margin: 0 auto;*/
+    display: flex;
+    flex-direction: column;
+    border: black solid 10px;
+}
+
+.game-field .row {
+    height: 40px;
+    display: flex;
+}
+
+div.field.apple {
+    background: url('/static/apple.png');
+}
