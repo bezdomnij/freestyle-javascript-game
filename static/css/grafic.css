@@ -15,9 +15,9 @@ div.snake_place{
     width: 40px;
     color: black;
     background: url('/static/snake.png');
-    border: black solid 1px;
-    position: absolute;
-    top: 500px;
+    /*border: black solid 1px;*/
+    /*position: absolute;*/
+    /*top: 200px;*/
 }
 
 .game-field {

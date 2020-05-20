@@ -4,10 +4,13 @@ app = Flask(__name__)
 
 @app.route('/')
 def main_page():
-    rows = 20
-    cols = 32
+    rows = 15
+    cols = 20
     snake_place = [33]
-    return render_template('index.html', rows=rows, cols=cols, snake_place=snake_place)
+    snake_row = snake_place[0] // 32
+    snake_col = snake_place[0] % 32
+
+    return render_template('index.html', rows=rows, cols=cols, snake_row=snake_row, snake_col=snake_col)
 
 
 if __name__ == '__main__':

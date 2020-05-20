@@ -14,14 +14,14 @@
         <div class="row">
             {% for col_index in range(cols) %}
                 <div
-                        class="field"
+                        class="field {{'snake_place' if (row_index == snake_row and col_index == snake_col) else ''}}"
                         data-row="{{ row_index }}"
                         data-col="{{ col_index }}"
                 ></div>
             {% endfor %}
         </div>
     {% endfor %}
-    <div class="snake_place"></div>
+{#    <div class="snake_place"></div>#}
 </div>
 </body>
 </html>

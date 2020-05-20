@@ -15,7 +15,7 @@ function borderControl(){
     if(sHead[0].offsetLeft < 18){alert("Illegal border crossing!")};
     if(sHead[0].offsetLeft > 1258){alert("Illegal border crossing!")};
 
-    sHead[0].offsetLeft
+    // sHead[0].offsetLeft
 
 }
 
@@ -23,7 +23,15 @@ function moveHead() {
     // add event listener
     let bodySnatcher = document.querySelector('body');
     let sHead = document.getElementsByClassName("snake_place");
-    console.log(sHead);
+
+    allFields=document.getElementsByClassName("field");
+    console.log(allFields.length);
+    console.log(sHead.item(0).className);
+    for (let i=0; i<allFields.length; i++) {
+        if (allFields.item(i).className === "field snake_place") {
+            console.log("fuckit:", i);
+        };
+    }
 
     let rowCoordinate = sHead.item(0).getAttribute("data-row")
     let columnCoordinate = sHead.item(0).getAttribute("data-col");
@@ -31,7 +39,6 @@ function moveHead() {
 
     bodySnatcher.addEventListener('keydown', function (e) {
         // e = e || window.e;
-
 
         if (e.keyCode === 38) {
             // up arrow
@@ -68,14 +75,10 @@ function moveHead() {
         return Math.floor(Math.random() * (max - min)) + min;
     }
 
-    function selectField() {
+    function selectField() { // apple placement really
         let fields = document.getElementsByClassName("field");
-
-        let randomInt = getRndInteger(1, 640);  //TODO: exclude snake coordinates
-        let apple = fields[randomInt];
-        apple.className += " apple";
-
-
-
+        let randomInt = getRndInteger(1, 299);  //TODO: exclude snake coordinates
+        let apple = fields[randomInt]; // a lista random eleme
+        apple.className += "apple";
     }
 
