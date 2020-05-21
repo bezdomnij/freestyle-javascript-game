@@ -102,9 +102,7 @@ function moveHead(appleWhere) {// add event listener
             if (new_pos === appleWhere) {
                 appleWhere = placeApple();
             }
-
         }
-
     });
 }
 
@@ -145,10 +143,20 @@ function getRndInteger(min, max) {
 }
 
 function placeApple() { // apple placement really
+    let sHead_index, apple, randomInt;
     let fields = document.getElementsByClassName("field");
-    let randomInt = getRndInteger(1, 299);  //TODO: exclude snake coordinates
-    let apple = fields[randomInt]; // a lista random eleme
-    apple.className += "apple"; // add 'apple' to class
+    for (let i = 0; i < fields.length; i++) {
+        if (fields.item(i).className === "field snake_place") {
+            console.log("fuckit:", i);
+            sHead_index = i;
+        }
+    }
+    do {
+        randomInt = getRndInteger(0, 299);  //TODO: exclude snake coordinates
+        apple = fields[randomInt]; // a lista random eleme
+    } while (randomInt === sHead_index);
+
+    apple.className = "field apple"; // add 'apple' to class
     return randomInt;
 }
 
